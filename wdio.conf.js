@@ -4,9 +4,14 @@ export const config = {
     // Runner Configuration
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
-    runner: 'local',
-    port: 4723,
-    path: '/wd/hub',
+
+    //runner: 'local',
+    //port: 4723,
+    user: 'guilhermeha7',
+    key: '*****05a0',
+    hostname: 'ondemand.us-west-1.saucelabs.com',
+    port: 443,
+    baseUrl: 'wd/hub',
     //
     // ==================
     // Specify Test Files
@@ -53,12 +58,26 @@ export const config = {
     //
     capabilities: [{
         platformName: 'Android',
+        'appium:app': 'storage:filename=ebacshop.apk', // The filename of the mobile app
+        'appium:deviceName': 'Android GoogleAPI Emulator',
+        'appium:platformVersion': '12.0',
+        'appium:automationName': 'UiAutomator2',
+        'sauce:options': {
+            build: 'appium-build-test-ebacshop',
+            name: 'EBAC Test',
+            deviceOrientation: 'PORTRAIT',
+            },
+        
+        }
+        /*{
+        platformName: 'Android',
         'appium:platformVersion': '7.0',
         'appium:deviceName': 'pixel_2',
         'appium:automationName': 'UiAutomator2',
         'appium:app': 'C:\\Users\\guilh\\Documents\\Testing\\testes_mobile\\exercicio_ebac_mobile\\app\\ebacshop.apk',
         'appium:appWaitActivity': '.MainActivity',
-      }],
+      }*/
+    ],
 
     //
     // ===================
