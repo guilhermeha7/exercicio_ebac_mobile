@@ -14,7 +14,7 @@ describe('Funcionalidade: Cadastro de Usuário',  () => {
         await HomePage.abrirAba('tab-profile')
         await LoginPage.clicarEmSignUp()
         await CadastroPage.cadastrarUsuario('Thomas','Almeida',11912345678,email,'teste123')
-        await HomePage.abrirAba('tab-profile')
+        await HomePage.abrirAba('tab-profile') //bug
         expect(await $(`android=new UiSelector().text("${email}")`)).toBeDisplayed()
     });
 });
